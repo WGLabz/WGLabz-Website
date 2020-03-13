@@ -100,7 +100,7 @@
                     <li>
                       <a href="#home-section" class="nav-link">Home</a>
                     </li>
-                    <li class="has-children">
+                    <!-- <li class="has-children">
                       <a href="#about-section" class="nav-link">About Us</a>
                       <ul class="dropdown arrow-top">
                         <li><a href="#our-team-section" class="nav-link">Team</a></li>
@@ -115,13 +115,13 @@
                           </ul>
                         </li>
                       </ul>
-                    </li>
+                    </li> -->
                     <li>
-                      <a href="#projects-section" class="nav-link">Projects</a>
+                      <a href="#projects-section" class="nav-link">Blog Posts</a>
                     </li>
-                    <li><a href="#news-section" class="nav-link">News</a></li>
-                    <li><a href="#services-section" class="nav-link">Services</a></li>
-                    <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                    <li><a href="#news-section" class="nav-link">SBCs</a></li>
+                    <!-- <li><a href="#services-section" class="nav-link">Services</a></li>
+                    <li><a href="#contact-section" class="nav-link">Contact</a></li> -->
                   </ul>
                 </div>
               </nav>
@@ -535,107 +535,87 @@
     </div>
 
      -->
+     <!-- Start Blog Contents -->
     <div class="site-section" id="projects-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
-            <span class="sub-title">Awesome Projects</span>
-            <h2 class="font-weight-bold text-black">Our Projects</h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, explicabo, quasi. Magni deserunt sunt labore.</p>
+            <span class="sub-title">Recent Posts</span>
+            <h2 class="font-weight-bold text-black">From the blog !!</h2>
+            <p class="mb-5"></p>
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_1.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-            <h3 class="mb-0"><a href="#">Butterfly House</a></h3>
-            <span class="text-muted">Interior</span>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_2.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-            </a>
-            <h3 class="mb-0"><a href="#">Interior Bed Design</a></h3>
-            <span class="text-muted">Design</span>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_3.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-            </a>
-            <h3 class="mb-0"><a href="#">Kitchen Sink Design</a></h3>
-            <span class="text-muted">Interior</span>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_4.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_4.jpg" alt="Image" class="img-fluid">
-            </a>
-            <h3 class="mb-0"><a href="#">Lobby Interior Design</a></h3>
-            <span class="text-muted">Interior</span>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_5.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_5.jpg" alt="Image" class="img-fluid">
-            </a>
-            <h3 class="mb-0"><a href="#">Relaxation Room Design</a></h3>
-            <span class="text-muted">Design</span>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 project-entry">
-            <a href="images/img_6.jpg" class="d-block figure" data-fancybox="gallery">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-            <h3 class="mb-0"><a href="#">Butterfly House</a></h3>
-            <span class="text-muted">Interior</span>
+          <?php
+          $url = "http://www.weargenius.in/feed";
+          $invalidurl = false;
+          if(@simplexml_load_file($url)){
+          $feeds = simplexml_load_file($url);
+          }else{
+          $invalidurl = true;
+          echo "<h2>Invalid RSS feed URL.</h2>";
+          }
+          if(!empty($feeds)){
+            foreach ($feeds->channel->item as $item) {
+              preg_match( '@src="([^"]+)"@' ,$item->description, $match );
+              $postDate = $item->pubDate;
+              $pubDate = date('D, d M Y',strtotime($postDate));
+              echo '
+                <div class="col-lg-4 col-md-6 mb-4 project-entry">
+                <a href="'.$item->link.'" class="d-block figure" data-fancybox="gallery">
+                <img src="'.array_pop($match).'" alt="Image" class="img-fluid" style="width:100%; height:100%;">
+                </a>
+                <h3 class="mb-0"><a href="#">'.$item->title.'</a></h3>
+                <span class="text-muted">'.$pubDate.'</span>
+                </div>';
+            }
+          }    
+          ?>
+        </div>
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="https://weargenius.in/" class="btn btn-primary btn-lg rounded-0">View All Posts</a></p>
           </div>
         </div>
       </div>
     </div>
-
-
-    
+    <!-- End Blog Contents -->
 
     <div class="site-section" id="news-section">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
-            <span class="sub-title">News &amp; Update</span>
-            <h2 class="font-weight-bold text-black mb-5">Our Blog Posts</h2>
+            <span class="sub-title">Latest Additions to SBCFinder!!</span>
+            <h2 class="font-weight-bold text-black mb-5">Check and Compare Single Board Computers</h2>
           </div>
         </div>
         <div class="row mb-5">
-          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 post-entry">
-            <a href="#" class="d-block figure">
-              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-            </a>
-            <span class="text-muted d-block mb-1">29, January 2019</span>
-            <h3><a href="#">Architectural Art Modern</a></h3>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 post-entry">
-            <a href="#" class="d-block figure">
-              <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-            </a>
-            <span class="text-muted d-block mb-1">29, January 2019</span>
-            <h3><a href="#">Architectural Art Modern</a></h3>
-          </div>
-          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 post-entry">
-            <a href="#" class="d-block figure">
-              <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-            </a>
-            <span class="text-muted d-block mb-1">29, January 2019</span>
-            <h3><a href="#">Architectural Art Modern</a></h3>
-          </div>
-
+        <?php
+          $url = "https://sbcfinder.com/API/latestSBCs.php";
+          $data = file_get_contents($url); // put the contents of the file into a variable
+          $sbcs = json_decode($data); // decode the JSON feed
+          foreach($sbcs as $sbc){
+            echo '
+              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 post-entry">
+                <a href="https://sbcfinder.com/'.$sbc->sdnametrim.'" class="d-block figure">
+                <img src="https://sbcfinder.com/img/sbc/thumbs/'.$sbc->sdmainimage.'" alt="'.$sbc->sdmainimage.'" class="img-fluid">
+                </a>
+                <span class="text-muted d-block mb-1"></span>
+                <h3><a href="#">'.$sbc->sdname.'</a></h3>
+              </div>
+            ';
+          }
+          ?>
         </div>
         <div class="row mt-5 text-center">
           <div class="col-12">
-            <p><a href="#" class="btn btn-primary btn-lg rounded-0">View All Posts</a></p>
+            <p><a href="https://sbcfinder.com/" class="btn btn-primary btn-lg rounded-0">Check them All</a></p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="site-section" id="services-section">
+    <!-- <div class="site-section" id="services-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
@@ -761,7 +741,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <footer class="site-footer border-top">
       <div class="container">
@@ -773,7 +753,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non rem iusto nisi, eum vitae quas culpa fugiat itaque aliquam nulla, accusamus aspernatur molestias recusandae voluptates ratione dolores deleniti velit. Corporis.</p>
               </div>
             </div>
-            <div class="row mb-5">
+            <!-- <div class="row mb-5">
               <div class="col-md-12">
                 <h3 class="footer-heading mb-4">Navigation</h3>
               </div>
@@ -793,7 +773,7 @@
                   <li><a href="#">Membership</a></li>
                 </ul>
               </div>
-            </div>
+            </div> -->
 
             
           </div>
@@ -863,13 +843,15 @@
 
             <div class="row">
               <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Follow Us</h3>
+                <h3 class="footer-heading mb-4">Catch Us</h3>
 
                 <div>
-                  <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                  <a href="https://www.facebook.com/wglabz" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                  <a href="https://twitter.com/wglabz" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                  <a href="https://instagram.com/wglabz" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                  <a href="https://www.linkedin.com/company/wglabz" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                  <a href="https://www.youtube.com/channel/UCo3jik11kHu65uQBGueaw4g" class="pl-3 pr-3"><span class="icon-youtube"></span></a>
+                  <a href="https://github.com/oksbwn" class="pl-3 pr-3"><span class="icon-github"></span></a>
                 </div>
               </div>
             </div>
@@ -882,7 +864,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved, WGLabz | This template is made with by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
