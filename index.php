@@ -835,74 +835,34 @@
                 <p>WGLabz is working towards video contents towards IoT, Smart Home and Embedded System. We are working on latest technologies around the above niches and try to publish content around those to help people learn.  </p>
               </div>
             </div>
-            <!-- <div class="row mb-5">
+            <div class="row mb-5">
               <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Navigation</h3>
+                <h3 class="footer-heading mb-4">Links</h3>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">News</a></li>
-                  <li><a href="#">Team</a></li>
+                  <li><a href="https://sbcfinder.com/">SBCFinder</a></li>
+                  <li><a href="http://weargenius.in/">WeArGenius Blog</a></li>
+                  <li><a href="https://youtube.com/weargenius">YouTube Channel</a></li>
+                  <li><a href="#">Hindi YouTube Channel</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-6">
                 <ul class="list-unstyled">
-                  <li><a href="#">Interior Design</a></li>
+                  <!-- <li><a href="#">Interior Design</a></li>
                   <li><a href="#">Architect</a></li>
                   <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Membership</a></li>
+                  <li><a href="#">Membership</a></li> -->
                 </ul>
               </div>
-            </div> -->
+            </div>
 
             
           </div>
           <div class="col-lg-4">
-           
-
             <div class="mb-5">
-              <h3 class="footer-heading mb-4">Recent News</h3>
-              <div class="block-25">
-                <ul class="list-unstyled">
-                  <li class="mb-3">
-                    <a href="#" class="d-flex">
-                      <figure class="image mr-4">
-                        <img src="images/img_2.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="small text-uppercase date">Jan 16, 2018</span>
-                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="mb-3">
-                    <a href="#" class="d-flex">
-                      <figure class="image mr-4">
-                        <img src="images/img_3.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="small text-uppercase date">Jan 16, 2018</span>
-                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="mb-3">
-                    <a href="#" class="d-flex">
-                      <figure class="image mr-4">
-                        <img src="images/img_4.jpg" alt="" class="img-fluid">
-                      </figure>
-                      <div class="text">
-                        <span class="small text-uppercase date">Jan 16, 2018</span>
-                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <a class="twitter-timeline" data-height="500" href="https://twitter.com/wglabz?ref_src=twsrc%5Etfw">Tweets by wglabz</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-            
           </div>
           
 
