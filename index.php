@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
 
 
     <!-- Fav Icon -->
@@ -552,6 +553,70 @@
     </div>
 
      -->
+     <!-- Start Youtube Videos -->
+
+     <div class="site-section" id="news-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <span class="sub-title" style="color:#4285f4 !important;">Latest Videos!!</span>
+            <h2 class="font-weight-bold text-black mb-5">WeArGenius YouTube Channel</h2>
+          </div>
+        </div>
+        <div class="row mb-3">
+        <?php
+          require_once('Class/FetchYTVideos.php');
+          $ytObj = new FetchYoutubeVideos;
+          $videos=$ytObj->fetchLatest();
+          for ($j = 0; $j < count($videos,COUNT_NORMAL); $j = $j+8) {
+            echo '
+              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 post-entry">
+                <a href="https://www.youtube.com/watch?v='.$videos[$j].' class="d-block figure">
+                <img src="https://img.youtube.com/vi/' . $videos[$j] . '/0.jpg" class="img-fluid">
+                </a>
+                <div class="row mb-0">
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-eye"></i></span>
+                  </div>
+                  <div class="col-sm-2">
+                    ' . $videos[$j+4] . '
+                  </div>
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-thumbs-up"></i></span>
+                  </div>
+                  <div class="col-sm-1">
+                    ' . $videos[$j+5] . '
+                  </div>
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-thumbs-down"></i></span>
+                  </div>
+                  <div class="col-sm-1">
+                    ' . $videos[$j+6] . '
+                  </div>
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-comments"></i></span>
+                  </div>
+                  <div class="col-sm-1">
+                    ' . $videos[$j+7] . '
+                  </div>
+                </div>
+                <h3><a href="https://www.youtube.com/watch?v='.$videos[$j].'">' . $videos[$j+1]. '</a></h3>
+              </div>
+            ';
+
+          }
+          ?>
+        </div>
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="https://youtube.com/weargenius" class="btn btn-primary btn-lg rounded-0" style="background:#4285f4 !important; border: 1px ">Check them All</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- End YT Videos -->
+
+
      <!-- Start Blog Contents -->
     <div class="site-section" id="projects-section">
       <div class="container">
