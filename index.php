@@ -23,15 +23,15 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    
-    
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    
-
     <link rel="stylesheet" href="css/style.css">
+
+
+
+
+    
     <meta name="google-site-verification" content="rAtBdWYVtwuhKo2Om3kM2gu3ymRIE-EClQSQ8WT1OG4" />
     
   </head>
@@ -56,7 +56,7 @@
     </div> <!-- .site-mobile-menu -->
     
     
-    <div class="site-navbar-wrap">
+    <div class="site-navbar-wrap" >
       <div class="site-navbar-top">
         <div class="container py-3">
           <div class="row align-items-center">
@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <div class="site-navbar site-navbar-target js-sticky-header">
+      <div class="site-navbar site-navbar-target js-sticky-header" style="background:#4285f4 !important;">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-2">
@@ -540,7 +540,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
-            <span class="sub-title">Recent Posts</span>
+            <span class="sub-title" style="color:#4285f4 !important;">Recent Posts</span>
             <h2 class="font-weight-bold text-black">From the blog !!</h2>
             <p class="mb-5"></p>
           </div>
@@ -574,7 +574,7 @@
         </div>
         <div class="row mt-5 text-center">
           <div class="col-12">
-            <p><a href="https://weargenius.in/" class="btn btn-primary btn-lg rounded-0">View All Posts</a></p>
+            <p><a href="https://weargenius.in/" class="btn btn-primary btn-lg rounded-0" style="background:#4285f4 !important; border: 1px ">View All Posts</a></p>
           </div>
         </div>
       </div>
@@ -585,7 +585,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 text-center">
-            <span class="sub-title">Latest Additions to SBCFinder!!</span>
+            <span class="sub-title" style="color:#4285f4 !important;">Latest Additions to SBCFinder!!</span>
             <h2 class="font-weight-bold text-black mb-5">Check and Compare Single Board Computers</h2>
           </div>
         </div>
@@ -609,7 +609,7 @@
         </div>
         <div class="row mt-5 text-center">
           <div class="col-12">
-            <p><a href="https://sbcfinder.com/" class="btn btn-primary btn-lg rounded-0">Check them All</a></p>
+            <p><a href="https://sbcfinder.com/" class="btn btn-primary btn-lg rounded-0" style="background:#4285f4 !important; border: 1px ">Check them All</a></p>
           </div>
         </div>
       </div>
@@ -750,7 +750,7 @@
             <div class="row mb-5">
               <div class="col-12">
                 <h3 class="footer-heading mb-4">About Us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non rem iusto nisi, eum vitae quas culpa fugiat itaque aliquam nulla, accusamus aspernatur molestias recusandae voluptates ratione dolores deleniti velit. Corporis.</p>
+                <p>WGLabz is working towards video contents towards IoT, Smart Home and Embedded System. We are working on latest technologies around the above niches and try to publish content around those to help people learn.  </p>
               </div>
             </div>
             <!-- <div class="row mb-5">
@@ -826,7 +826,7 @@
 
           <div class="col-lg-4 mb-5 mb-lg-0">
 
-            <div class="mb-5">
+            <!-- <div class="mb-5">
               <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
 
@@ -834,12 +834,12 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control border-white text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
                   <div class="input-group-append">
-                    <button class="btn btn-primary" type="button" id="button-addon2">Send</button>
+                    <button class="btn btn-primary" type="button" id="button-addon2" style="background:#4285f4 !important; border: 1px ">Send</button>
                   </div>
                 </div>
               </form>
 
-            </div>
+            </div> -->
 
             <div class="row">
               <div class="col-md-12">
