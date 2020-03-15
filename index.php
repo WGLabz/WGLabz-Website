@@ -567,40 +567,40 @@
         <?php
           require_once('Class/FetchYTVideos.php');
           $ytObj = new FetchYoutubeVideos;
-          $videos=$ytObj->fetchLatest();
-          for ($j = 0; $j < count($videos,COUNT_NORMAL); $j = $j+8) {
+          $videos_=$ytObj->fetchLatest();
+          foreach($videos_ as $videos) {
             echo '
               <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 post-entry">
-                <a href="https://www.youtube.com/watch?v='.$videos[$j].' class="d-block figure">
-                <img src="https://img.youtube.com/vi/' . $videos[$j] . '/0.jpg" class="img-fluid">
+                <a href="https://www.youtube.com/watch?v='.$videos->videoId.' class="d-block figure">
+                <img src="https://img.youtube.com/vi/' . $videos->videoId . '/0.jpg" class="img-fluid">
                 </a>
                 <div class="row mb-0">
                   <div class="col-sm-1">
                     <span><i class="fa fa-eye"></i></span>
                   </div>
                   <div class="col-sm-2">
-                    ' . $videos[$j+4] . '
+                    ' . $videos->viewCount . '
                   </div>
                   <div class="col-sm-1">
                     <span><i class="fa fa-thumbs-up"></i></span>
                   </div>
                   <div class="col-sm-1">
-                    ' . $videos[$j+5] . '
+                    ' . $videos->likeCount. '
                   </div>
                   <div class="col-sm-1">
                     <span><i class="fa fa-thumbs-down"></i></span>
                   </div>
                   <div class="col-sm-1">
-                    ' . $videos[$j+6] . '
+                    ' . $videos->dislikeCount . '
                   </div>
                   <div class="col-sm-1">
                     <span><i class="fa fa-comments"></i></span>
                   </div>
                   <div class="col-sm-1">
-                    ' . $videos[$j+7] . '
+                    ' . $videos->commentCount. '
                   </div>
                 </div>
-                <h3><a href="https://www.youtube.com/watch?v='.$videos[$j].'">' . $videos[$j+1]. '</a></h3>
+                <h3><a href="https://www.youtube.com/watch?v='.$videos->videoId.'">' . $videos->title. '</a></h3>
               </div>
             ';
 

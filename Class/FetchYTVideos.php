@@ -7,19 +7,19 @@
             $ids=array();
             foreach($arr->items as $x){
                 if(($x->id->videoId != "") && ($x->snippet->title!="") ){
-                    array_push($ids,$x->id->videoId);
-                    array_push($ids,$x->snippet->title);
-                    array_push($ids,$x->snippet->publishedAt);
-                    array_push($ids,$x->snippet->description);
+                    $detailsObj->videoId = $x->id->videoId;
+                    $detailsObj->title = $x->snippet->title;
+                    $detailsObj->publishedAt = $x->snippet->publishedAt;
+                    $detailsObj->description = $x->snippet->description;
                     $stats_= file_get_contents('https://www.googleapis.com/youtube/v3/videos?key=AIzaSyDQfP10VXe8N42OCvgl2Ngy_RmFJtnjCME&part=statistics&id='.$x->id->videoId);
                     $arr_=json_decode($stats_);
                     foreach($arr_->items as $item){
-                        array_push($ids,$item->statistics->viewCount);
-                        array_push($ids,$item->statistics->likeCount);
-                        array_push($ids,$item->statistics->dislikeCount);
-                        array_push($ids,$item->statistics->commentCount);
+                            $detailsObj->viewCount = $item->statistics->viewCount;
+                            $detailsObj->likeCount = $item->statistics->likeCount;
+                            $detailsObj->dislikeCount = $item->statistics->dislikeCount;
+                            $detailsObj->commentCount = $item->statistics->commentCount;
                     }
-
+                    array_push($ids,$detailsObj);
                 }
             }
             return $ids;
