@@ -7,6 +7,7 @@
             $ids=array();
             foreach($arr->items as $x){
                 if(($x->id->videoId != "") && ($x->snippet->title!="") ){
+                    $detailsObj = new stdClass();
                     $detailsObj->videoId = $x->id->videoId;
                     $detailsObj->title = $x->snippet->title;
                     $detailsObj->publishedAt = $x->snippet->publishedAt;
