@@ -648,7 +648,7 @@
                 <a href="'.$item->link.'" class="d-block figure" data-fancybox="gallery">
                 <img src="'.array_pop($match).'" alt="Image" class="img-fluid" style="width:100%; height:100%;">
                 </a>
-                <h3 class="mb-0"><a href="#">'.$item->title.'</a></h3>
+                <h3 class="mb-0"><a href="'.$item->link.'">'.$item->title.'</a></h3>
                 <span class="text-muted">'.$pubDate.'</span>
                 </div>';
             }
