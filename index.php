@@ -845,7 +845,7 @@
                   <li><a href="https://sbcfinder.com/">SBCFinder</a></li>
                   <li><a href="http://weargenius.in/">WeArGenius Blog</a></li>
                   <li><a href="https://youtube.com/weargenius">YouTube Channel</a></li>
-                  <li><a href="#">Hindi YouTube Channel</a></li>
+                  <li><a href="https://www.youtube.com/channel/UC5BKrTTm1zZ2IxfVhnQufbA">Second YouTube Channel</a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-lg-6">
