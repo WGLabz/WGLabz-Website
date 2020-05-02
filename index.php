@@ -697,7 +697,69 @@
         </div>
       </div>
     </div>
+<!-- Start Youtube Videos -->
 
+     <div class="site-section" id="news-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <span class="sub-title" style="color:#4285f4 !important;">Latest Videos!!</span>
+            <h2 class="font-weight-bold text-black mb-5">WGLabz Extended YouTube Channel</h2>
+          </div>
+        </div>
+        <div class="row mb-3">
+        <?php
+          require_once('Class/FetchYTVideosWGlabz.php');
+          $ytObj = new FetchYoutubeVideos;
+          $videos_=$ytObj->fetchLatest();
+          // var_dump($videos_);
+          foreach($videos_ as $videos) {
+            echo '
+              <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 post-entry">
+                <a href="https://www.youtube.com/watch?v='.$videos->videoId.' class="d-block figure">
+                <img src="https://img.youtube.com/vi/' . $videos->videoId . '/0.jpg" class="img-fluid">
+                </a>
+                <div class="row mb-0">
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-eye"></i></span>
+                  </div>
+                  <div class="col-sm-2">
+                    ' . $videos->viewCount . '
+                  </div>
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-thumbs-up"></i></span>
+                  </div>
+                  <div class="col-sm-1">
+                    ' . $videos->likeCount. '
+                  </div>
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-thumbs-down"></i></span>
+                  </div>
+                  <div class="col-sm-1">
+                    ' . $videos->dislikeCount . '
+                  </div>
+                  <div class="col-sm-1">
+                    <span><i class="fa fa-comments"></i></span>
+                  </div>
+                  <div class="col-sm-1">
+                    ' . $videos->commentCount. '
+                  </div>
+                </div>
+                <h3><a href="https://www.youtube.com/watch?v='.$videos->videoId.'">' . $videos->title. '</a></h3>
+              </div>
+            ';
+
+          }
+          ?>
+        </div>
+        <div class="row mt-5 text-center">
+          <div class="col-12">
+            <p><a href="https://www.youtube.com/channel/UC5BKrTTm1zZ2IxfVhnQufbA" class="btn btn-primary btn-lg rounded-0" style="background:#4285f4 !important; border: 1px ">Check them All</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- End YT Videos -->
     <!-- <div class="site-section" id="services-section">
       <div class="container">
         <div class="row justify-content-center">
