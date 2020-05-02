@@ -1,8 +1,8 @@
 <?php
     class FetchYoutubeVideos{
-        function fetchLatest(){
+        function fetchLatest($channelID){
             $API_KEY = "AIzaSyBg6dDmGc-iqkcbQtC_-igYXaNmHSpbqzo"; 
-            $response = file_get_contents('https://www.googleapis.com/youtube/v3/search?key='.$API_KEY.'&channelId=UCo3jik11kHu65uQBGueaw4g&part=id,snippet&order=date&maxResults=8');
+            $response = file_get_contents('https://www.googleapis.com/youtube/v3/search?key='.$API_KEY.'&channelId='.$channelID.'&part=id,snippet&order=date&maxResults=8');
             $arr=json_decode($response);
             $ids=array();
             foreach($arr->items as $x){

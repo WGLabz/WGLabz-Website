@@ -567,7 +567,7 @@
         <?php
           require_once('Class/FetchYTVideos.php');
           $ytObj = new FetchYoutubeVideos;
-          $videos_=$ytObj->fetchLatest();
+          $videos_=$ytObj->fetchLatest("UCo3jik11kHu65uQBGueaw4g");
           // var_dump($videos_);
           foreach($videos_ as $videos) {
             echo '
@@ -709,9 +709,7 @@
         </div>
         <div class="row mb-3">
         <?php
-          require_once('Class/FetchYTVideosWGlabz.php');
-          $ytObj = new FetchYoutubeVideos;
-          $videos_=$ytObj->fetchLatest();
+          $videos_=$ytObj->fetchLatest("UC5BKrTTm1zZ2IxfVhnQufbA");
           // var_dump($videos_);
           foreach($videos_ as $videos) {
             echo '
