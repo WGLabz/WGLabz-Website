@@ -51,7 +51,46 @@
     <!-- Fav Icon End -->
 
     <meta name="google-site-verification" content="rAtBdWYVtwuhKo2Om3kM2gu3ymRIE-EClQSQ8WT1OG4" />
-    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/", 
+      "@type": "BreadcrumbList", 
+      "itemListElement": [{
+        "@type": "ListItem", 
+        "position": 1, 
+        "name": "WeArGenius YouTube Channel",
+        "item": "https://youtube.com/weargenius"  
+      },{
+        "@type": "ListItem", 
+        "position": 2, 
+        "name": "From the blog !!",
+        "item": "https://weargenius.in/"  
+      },{
+        "@type": "ListItem", 
+        "position": 3, 
+        "name": "Check and Compare Single Board Computers",
+        "item": "https://sbcfinder.com/"  
+      },{
+        "@type": "ListItem", 
+        "position": 4, 
+        "name": "WGLabz Extended YouTube Channel",
+        "item": "https://www.youtube.com/channel/UC5BKrTTm1zZ2IxfVhnQufbA"  
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "WGLabz Official Website",
+    "url": "https://wglabz.in/",
+    "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{search_term_string}",
+    "query-input": "required name=search_term_string"
+    }
+    }
+    </script>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
